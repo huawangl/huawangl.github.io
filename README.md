@@ -1,36 +1,109 @@
-# 高级成语语言设计课程设计 -- 键盘上的贪吃蛇
+# The Cayman theme
 
-## 说明
+[![Build Status](https://travis-ci.org/pages-themes/cayman.svg?branch=master)](https://travis-ci.org/pages-themes/cayman) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-cayman.svg)](https://badge.fury.io/rb/jekyll-theme-cayman)
 
-1. 课程设计按照对本门课程综合能力测试的原则，涉及本门课程的知识点包含但不仅限于两学期课程内容，如：数据类型与基本运算，逻辑语法，函数和重载，指针，引用和来与对象等。
-2. 为增加课程设计的趣味性，本次课程设计安排题目为**键盘上的贪吃蛇**。设计中游戏的规则和本次课程设计积分规则在**要求**中列出，请同学们关注。
-3. 本次课程设计为小组形式完成，每组两人，分组形式在微信分组助手中完成；
-4. 代码在打分验收后提交的代码中有说明小组人员完成部分的说明文件。
-## 要求
-### 编码规则
-1. 本次课程设计在CMD窗口输出，如下图所示，在设计完成的设计窗口应有游戏边界显示，障碍物显示，玩家ID和累计积分等信息；
-   ![贪吃蛇界面](snakeinterface1.jpg)
-2. 设置游戏欢迎界面，包括但不限于游戏名称，操作方式和玩家ID输入等；
-3. 游戏窗口的范围长和宽不小于50，范围边界需设置围栏；
-4. 如设置障碍物，每个障碍物长度应大于4，障碍物相连为一个障碍物，与边界相连不视为障碍物，且至少有一个障碍物为**L**型；
-5. 贪吃蛇食物为随机生成，如果出现随机食物位置与蛇本身或障碍物重合，则重新生成食物，蛇身长度不变；
-6. 游戏中有开始游戏，暂停游戏和结束游戏按键设置。 使用方向按键换向角度应为90°，可使用上，下，左，右或者**W，A，S，D**按键换向，使用空格键暂停游戏，使用**Esc**按键退出游戏。
+*Cayman is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/cayman), or even [use it today](#usage).*
 
-### 打分规则
-1. 欢迎界面：5%
-2. 游戏边界显示和游戏记录信息等正确显示：10%
-3. 贪吃蛇能通过键盘按键正确移动：15%
-4. 食物自动生成并能够在吃完食物后成功积分：20%
-5. 能通过按键开始，暂停和结束游戏：10%
-6. 贪吃蛇在撞到障碍物，身体本身或者边界时结束游戏：20%
-7. 界面除必要显示信息，无其他非正常显示：10%
-8. 游戏要求功能完整：5%
-9. 代码逻辑清晰，并有对关键部分代码注释：5%
+![Thumbnail of Cayman](thumbnail.png)
 
+## Usage
 
+To use the Cayman theme:
 
-## 加分项（5%）
-* 使用不同颜色字体显示蛇体，障碍物，游戏积分等信息（1%）；
-* 有难度调节接口，如设置贪吃蛇移动速度等（2%）；
-* 随机出现时空穿越口（可设置在障碍物或者围栏上），贪吃蛇可以在此位置撞墙或穿越障碍物，墙体时空穿越口需成对出现（入口和出口），障碍物直接穿越（2%）；
+1. Add the following to your site's `_config.yml`:
 
+    ```yml
+    theme: jekyll-theme-cayman
+    ```
+
+2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+
+    ```ruby
+    gem "github-pages", group: :jekyll_plugins
+    ```
+
+## Customizing
+
+### Configuration variables
+
+Cayman will respect the following variables, if set in your site's `_config.yml`:
+
+```yml
+title: [The title of your site]
+description: [A short description of your site's purpose]
+```
+
+Additionally, you may choose to set the following optional variables:
+
+```yml
+show_downloads: ["true" or "false" to indicate whether to provide a download URL]
+google_analytics: [Your Google Analytics tracking ID]
+```
+
+### Stylesheet
+
+If you'd like to add your own custom styles:
+
+1. Create a file called `/assets/css/style.scss` in your site
+2. Add the following content to the top of the file, exactly as shown:
+    ```scss
+    ---
+    ---
+
+    @import "{{ site.theme }}";
+    ```
+3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+
+*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
+
+### Layouts
+
+If you'd like to change the theme's HTML layout:
+
+1. [Copy the original template](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
+2. Create a file called `/_layouts/default.html` in your site
+3. Paste the default layout content copied in the first step
+4. Customize the layout as you'd like
+
+### Overriding GitHub-generated URLs
+
+Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
+
+1. Look at [the template source](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
+2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
+    ```yml
+    github:
+      zip_url: http://example.com/download.zip
+      another_url: another value
+    ```
+3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
+
+*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
+
+For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
+
+## Roadmap
+
+See the [open issues](https://github.com/pages-themes/cayman/issues) for a list of proposed features (and known issues).
+
+## Project philosophy
+
+The Cayman theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+
+## Contributing
+
+Interested in contributing to Cayman? We'd love your help. Cayman is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
+
+### Previewing the theme locally
+
+If you'd like to preview the theme locally (for example, in the process of proposing a change):
+
+1. Clone down the theme's repository (`git clone https://github.com/pages-themes/cayman`)
+2. `cd` into the theme's directory
+3. Run `script/bootstrap` to install the necessary dependencies
+4. Run `bundle exec jekyll serve` to start the preview server
+5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+
+### Running tests
+
+The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` once before the test script will work.
