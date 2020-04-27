@@ -7,8 +7,8 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 [Link to another page](./another-page.html).
 another
 
-[link to test page](./test.html)
-test link
+[link to test page](./test.html).
+test
 
 
 There should be whitespace between paragraphs.
