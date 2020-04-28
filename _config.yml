@@ -1,5 +1,5 @@
 title: Huawangl Private Website
 description: This is a demo website and used by private purposes.
-show_downloads: true
+show_downloads: false
 google_analytics:
 theme: jekyll-theme-cayman
